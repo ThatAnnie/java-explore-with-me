@@ -11,12 +11,13 @@ import ru.practicum.server.service.StatsService;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import static ru.practicum.dto.StatsConstants.DATE_TIME_FORMAT;
+
 @RestController
 @RequiredArgsConstructor
 @Validated
 public class StatsController {
     private final StatsService statsService;
-    public static final String DATE_TIME_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
     @PostMapping("/hit")
     @ResponseStatus(HttpStatus.CREATED)

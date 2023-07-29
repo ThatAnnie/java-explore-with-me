@@ -7,12 +7,13 @@ import ru.practicum.dto.StatsDto;
 import ru.practicum.dto.ViewStatsDto;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
+
+import static ru.practicum.dto.StatsConstants.DATE_TIME_FORMATTER;
 
 public class StatsClient {
     private final WebClient webClient;
-    public static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
 
     public StatsClient(@Value("${stats-server.url}") String url) {
         this.webClient = WebClient.create(url);
