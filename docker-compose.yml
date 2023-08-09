@@ -30,6 +30,12 @@ services:
       - ewm-db
       - stats-server
     container_name: ewm-service
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ewm-db:5432/ewm
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - STATS_SERVER_URL=http://stats-server:9090
+
 
   ewm-db:
     image: postgres:14-alpine
@@ -37,6 +43,6 @@ services:
       - "6542:5432"
     container_name: ewm-db
     environment:
-      - POSTGRES_DB=mainservice
+      - POSTGRES_DB=ewm
       - POSTGRES_USER=root
       - POSTGRES_PASSWORD=root
