@@ -2,6 +2,7 @@ package ru.practicum.client;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import ru.practicum.dto.StatsDto;
 import ru.practicum.dto.ViewStatsDto;
@@ -11,11 +12,12 @@ import java.util.List;
 
 import static ru.practicum.dto.StatsConstants.DATE_TIME_FORMATTER;
 
+@Component
 public class StatsClient {
     private final WebClient webClient;
 
 
-    public StatsClient(@Value("${stats-server.url}") String url) {
+    public StatsClient(@Value("http://stats-server:9090") String url) {
         this.webClient = WebClient.create(url);
     }
 
