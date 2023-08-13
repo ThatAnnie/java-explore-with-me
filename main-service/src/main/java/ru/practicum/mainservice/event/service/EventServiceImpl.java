@@ -92,7 +92,7 @@ public class EventServiceImpl implements EventService {
                     break;
             }
         }
-        if (updateEventUserRequest.getAnnotation() != null && !updateEventUserRequest.getAnnotation().isEmpty()) {
+        if (updateEventUserRequest.getAnnotation() != null && !updateEventUserRequest.getAnnotation().isBlank()) {
             event.setAnnotation(updateEventUserRequest.getAnnotation());
         }
         if (updateEventUserRequest.getCategory() != null) {
@@ -102,7 +102,7 @@ public class EventServiceImpl implements EventService {
             });
             event.setCategory(category);
         }
-        if (updateEventUserRequest.getDescription() != null && !updateEventUserRequest.getAnnotation().isEmpty()) {
+        if (updateEventUserRequest.getDescription() != null && !updateEventUserRequest.getAnnotation().isBlank()) {
             event.setDescription(updateEventUserRequest.getDescription());
         }
         if (updateEventUserRequest.getEventDate() != null) {
@@ -121,7 +121,7 @@ public class EventServiceImpl implements EventService {
         if (updateEventUserRequest.getRequestModeration() != null) {
             event.setRequestModeration(updateEventUserRequest.getRequestModeration());
         }
-        if (updateEventUserRequest.getTitle() != null && !updateEventUserRequest.getAnnotation().isEmpty()) {
+        if (updateEventUserRequest.getTitle() != null && !updateEventUserRequest.getAnnotation().isBlank()) {
             event.setTitle(updateEventUserRequest.getTitle());
         }
         return EventMapper.INSTANCE.toEventFullDto(event, new Location(event.getLat(), event.getLon()));
