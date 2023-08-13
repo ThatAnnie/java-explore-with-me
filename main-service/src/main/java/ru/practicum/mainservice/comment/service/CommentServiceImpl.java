@@ -160,6 +160,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    @Transactional
     public void deleteCommentByAdmin(Long commentId) {
         log.info("deleteCommentByAdmin with commentId={}", commentId);
         commentRepository.deleteById(commentId);
