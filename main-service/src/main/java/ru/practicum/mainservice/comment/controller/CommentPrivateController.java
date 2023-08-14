@@ -35,7 +35,7 @@ public class CommentPrivateController {
     }
 
     @DeleteMapping("/{commentId}")
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteComment(@PathVariable Long userId,
                                 @PathVariable Long commentId) {
         commentService.deleteComment(userId, commentId);
@@ -48,8 +48,4 @@ public class CommentPrivateController {
                                               @RequestParam(defaultValue = "10") @Positive Integer size) {
         return commentService.getCommentsByUser(userId, from, size);
     }
-
-
-
-
 }

@@ -654,8 +654,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Ответ должен содержать код статуса 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
 							"});\r",
 							"\r",
 							"let source = pm.collectionVariables.get('response');\r",
@@ -1437,8 +1437,8 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Ответ должен содержать код статуса 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
+							"pm.test(\"Ответ должен содержать код статуса 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
 							"});\r",
 							"\r",
 							"let source = pm.collectionVariables.get('response');\r",
